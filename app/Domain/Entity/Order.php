@@ -35,10 +35,8 @@ class Order extends Model implements OrderFieldsContract, OrderStatusContract
 
     public function getStatusName(): string {
         $statuses = [
-            self::ORDER_STATUS_ON_MODERATION => 'На модерации',
             self::ORDER_STATUS_ACTIVE => 'Активна',
             self::ORDER_STATUS_DECLINED_BY_ADMIN => 'Заявка отклонена',
-            self::ORDER_STATUS_CANCELLED => 'Заявка отменена',
         ];
 
         return $statuses[$this->{Order::STATUS_FIELD}] ?? 'Статус неизвестен';

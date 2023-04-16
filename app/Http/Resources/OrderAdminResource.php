@@ -33,7 +33,8 @@ class OrderAdminResource extends JsonResource
         if ($model->children) {
             foreach ($this->children as $child) {
                 $result['children'][] = [
-                    'id' => $model->{Order::ORDER_ID_FIELD},
+                    'id' => $child->{Order::ORDER_ID_FIELD},
+                    'userID' => $child->{Order::USER_ID_FIELD},
                     'fromID' =>  $child->{Order::FROM_REGION_ID_FIELD},
                     'fromName' => optional($child->fromCity)->{Region::REGION_NAME_FIELD},
                     'toID' => $child->{Order::TO_REGION_ID_FIELD},

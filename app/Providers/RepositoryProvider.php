@@ -5,10 +5,12 @@ namespace App\Providers;
 
 
 use App\Domain\Contracts\Repository\Admin\OrderRepositoryAdminContract;
+use App\Domain\Contracts\Repository\Admin\RegionRepositoryAdminContract;
 use App\Domain\Contracts\Repository\Admin\UserRepositoryAdminContract;
 use App\Domain\Contracts\Repository\OrderRepositoryContract;
 use App\Domain\Contracts\Repository\UserRepositoryContract;
 use App\Interfaces\Repository\Admin\OrderRepositoryAdmin;
+use App\Interfaces\Repository\Admin\RegionRepositoryAdmin;
 use App\Interfaces\Repository\Admin\UserRepositoryAdmin;
 use App\Interfaces\Repository\OrderRepository;
 use App\Interfaces\Repository\UserRepository;
@@ -23,6 +25,7 @@ class RepositoryProvider extends ServiceProvider
         /** admin repo's */
         $this->bindAdminUserRepository();
         $this->bindAdminOrderRepository();
+        $this->bindAdminRegionRepository();
     }
 
     final public function bindUserRepository(): void {
@@ -39,5 +42,9 @@ class RepositoryProvider extends ServiceProvider
 
     final public function bindAdminOrderRepository(): void {
         $this->app->bind(OrderRepositoryAdminContract::class, OrderRepositoryAdmin::class);
+    }
+
+    final public function bindAdminRegionRepository(): void {
+        $this->app->bind(RegionRepositoryAdminContract::class, RegionRepositoryAdmin::class);
     }
 }

@@ -5,11 +5,13 @@ namespace App\Providers;
 
 
 use App\Domain\Contracts\Interactor\Admin\OrderInteractorAdminContract;
+use App\Domain\Contracts\Interactor\Admin\RegionInteractorAdminContract;
 use App\Domain\Contracts\Interactor\Admin\UserInteractorAdminContract;
 use App\Domain\Contracts\Interactor\AuthInteractorContract;
 use App\Domain\Contracts\Interactor\OrderInteractorContract;
 use App\Domain\Contracts\Interactor\UserInteractorContract;
 use App\Domain\UseCase\Admin\OrderInteractorAdmin;
+use App\Domain\UseCase\Admin\RegionInteractorAdmin;
 use App\Domain\UseCase\Admin\UserInteractorAdmin;
 use App\Domain\UseCase\AuthInteractor;
 use App\Domain\UseCase\OrderInteractor;
@@ -26,6 +28,7 @@ class InteractorProvider extends ServiceProvider
         /** Admin interactors */
         $this->bindUserAdminInteractor();
         $this->bindOrderAdminInteractor();
+        $this->bindRegionAdminInteractor();
     }
 
     final public function bindAuthInteractor(): void {
@@ -46,5 +49,9 @@ class InteractorProvider extends ServiceProvider
 
     final public function bindOrderAdminInteractor(): void {
         $this->app->bind(OrderInteractorAdminContract::class, OrderInteractorAdmin::class);
+    }
+
+    final public function bindRegionAdminInteractor(): void {
+        $this->app->bind(RegionInteractorAdminContract::class, RegionInteractorAdmin::class);
     }
 }
