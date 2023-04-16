@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Domain\Entity\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -17,12 +18,12 @@ class UserSeeder extends Seeder
     {
         DB::table("users")->insert(
             [
-                'login' => 'kulan_manager',
+                'login' => '7771234567',
                 'password' => Hash::make('h@rdP@$$', [
                     'rounds' => 12,
                 ]),
                 'region_id' => 1, // ALA
-                'role' => 1, // Admin
+                'role' => User::USER_ROLE_ADMIN,
             ]
         );
     }

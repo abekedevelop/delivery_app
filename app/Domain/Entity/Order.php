@@ -7,6 +7,7 @@ namespace App\Domain\Entity;
 use App\Domain\Entity\Contracts\OrderFieldsContract;
 use App\Domain\Entity\Contracts\OrderStatusContract;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Order extends Model implements OrderFieldsContract, OrderStatusContract
@@ -41,5 +42,10 @@ class Order extends Model implements OrderFieldsContract, OrderStatusContract
         ];
 
         return $statuses[$this->{Order::STATUS_FIELD}] ?? 'Статус неизвестен';
+    }
+
+    public function children(): HasMany
+    {
+        return $this->hasMany(Order::class, Order::PARENT_ID_FIELD, self::ORDER_ID_FIELD);
     }
 }

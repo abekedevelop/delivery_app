@@ -10,7 +10,7 @@ use App\Validators\Client\RegisterValidator;
 use Illuminate\Http\Request;
 
 /**
- * Class UserController
+ * Class AdminUserController
  * @package App\Http\Controllers
  */
 class UserController

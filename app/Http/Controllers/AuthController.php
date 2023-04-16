@@ -32,9 +32,10 @@ class AuthController
             ApiFailMessagesResponder::throwAbstractValidationError();
         }
 
+        $abilities = $user->isAdmin() ? $user->getAdminAbilities() : $user->getCommonAbilities();
         return response()->json(
             [
-                'token' => $user->createToken('access_token', $user->getCommonAbilities())->plainTextToken,
+                'token' => $user->createToken('access_token', $abilities)->plainTextToken,
                 'token_type' => 'Bearer',
             ]
         );
