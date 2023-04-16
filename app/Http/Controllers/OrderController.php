@@ -11,6 +11,7 @@ use App\Http\Resources\OrderResource;
 use App\Validators\BaseValidator;
 use App\Validators\Order\CreateOrderValidator;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class OrderController
 {
@@ -29,7 +30,10 @@ class OrderController
             /** @var Order|null $order */
             $order = $this->orderInteractor->create(CreateOrderDTO::fromRequest($request));
         } catch (\Exception $e) {
-            var_dump($e);
+            return response()->json([
+                'statusCode' => Response::HTTP_INTERNAL_SERVER_ERROR,
+                'message' => 'Error on server. Try later'
+            ]);
         }
 
         return new OrderResource($order);

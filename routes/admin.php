@@ -18,5 +18,5 @@ Route::group(['prefix' => 'v1'], static function () {
     Route::get('/orders', 'AdminOrderController@getOrders')->middleware('auth:sanctum', 'abilities:assign_admin');
     Route::patch('/orders', 'AdminOrderController@combineOrders')->middleware('auth:sanctum', 'abilities:assign_admin');
     Route::patch('/orders-decline', 'AdminOrderController@declineOrder')->middleware('auth:sanctum', 'abilities:assign_admin');
-    Route::post('/regions', 'AdminRegionController@createRegion')->middleware('auth:sanctum', 'abilities:assign_admin');
+    Route::post('/regions', 'AdminRegionController@createRegion')->middleware('auth:sanctum', 'abilities:assign_admin, create_order');
 });

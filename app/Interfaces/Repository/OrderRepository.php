@@ -17,6 +17,7 @@ class OrderRepository implements OrderRepositoryContract
             Order::FROM_REGION_ID_FIELD => $dto->fromRegionID,
             Order::TO_REGION_ID_FIELD => $dto->toRegionID,
             Order::DELIVERY_DATE_FIELD => $dto->deliveryDate,
+            Order::STATUS_FIELD => Order::ORDER_STATUS_ACTIVE,
         ];
 
         return Order::create($attrs);
