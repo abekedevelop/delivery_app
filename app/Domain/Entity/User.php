@@ -44,7 +44,7 @@ class User extends Authenticatable implements UserFieldsContract, UserRoleContra
 
     public function getAdminAbilities(): array
     {
-        return ['assign_admin'];
+        return ['administrate'];
     }
 
     public function isAdmin(): bool {

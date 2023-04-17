@@ -27,12 +27,7 @@ class UserInteractor implements UserInteractorContract
         $dto->password = Hash::make($dto->password, [
             'rounds' => 12,
         ]);
-        try {
-            $user = $this->userRepository->create($dto);
-        } catch (\Exception $e) {
-            return null;
-        }
 
-        return $user;
+        return $this->userRepository->create($dto);
     }
 }

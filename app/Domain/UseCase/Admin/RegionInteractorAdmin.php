@@ -21,7 +21,6 @@ class RegionInteractorAdmin implements RegionInteractorAdminContract
 
     public function addRegion(CreateRegionDTO $dto): Region
     {
-        var_dump(12312);
         return $this->regionRepository->create($dto);
     }
 }

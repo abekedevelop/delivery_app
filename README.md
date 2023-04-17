@@ -12,3 +12,5 @@ This is a test project of kulan-oil delivery app
 6) php artisan migrate
 7) php artisan db:seed
 
+There are postman request collection in project root. 
+You can use them to send requests.

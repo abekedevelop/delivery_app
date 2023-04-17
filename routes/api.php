@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1'], static function () {
    Route::post('/register', 'UserController@register');
    Route::post('/login', 'AuthController@authenticate');
-   Route::post('/order', 'OrderController@create')->middleware('auth:sanctum');
+   Route::post('/order', 'OrderController@create')->middleware('auth:sanctum', 'abilities:create_order');
 });

@@ -30,7 +30,7 @@ services:
         ports:
         -   3306:3306
         volumes:
-            - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+            - mysqldata:/data/db
         networks:
             - delivery
 
@@ -49,3 +49,5 @@ services:
 networks:
     delivery:
         driver: bridge
+volumes:
+    mysqldata:
