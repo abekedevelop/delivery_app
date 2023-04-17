@@ -14,3 +14,6 @@ This is a test project of kulan-oil delivery app
 
 There are postman request collection in project root. 
 You can use them to send requests.
+
+P.S. Did not make tests and frontend part. Had time for homework on Sunday only.
+Thanks for attention anyway. Have a nice day!
