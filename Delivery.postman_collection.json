@@ -17,13 +17,19 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "3|O9hfo5ByvMYBB0LiEyz1CK9qRnL5atBxnKDLKpO7",
+									"value": "10|NVrw66JcPYuRhIXq7Lgsx18vmTXZXebGmSVVyNQ1",
 									"type": "string"
 								}
 							]
 						},
 						"method": "PATCH",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n    \"userID\": 1\n}",
@@ -56,13 +62,19 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "17|uhzI3hOxM4gdyIua9R2b5YQslFRpMrXfY2bI0ZJD",
+									"value": "4|3LdjwLt00TWUaLgTOGbmzn8PJO4nSwgxji0w6Lg5",
 									"type": "string"
 								}
 							]
 						},
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "localhost:8000/admin/v1/orders",
 							"host": [
@@ -159,8 +171,33 @@
 				{
 					"name": "CreateRegion",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "1|q6KmVylr8fA1D5UAiEzpofYl8g05qf3Uouj38Qvs",
+									"type": "string"
+								}
+							]
+						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"Qostanay\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "localhost:8000/admin/v1/regions",
 							"host": [
@@ -214,7 +251,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"login\": \"7772129862\",\n    \"password\": \"Abeke123@\"\n}",
+					"raw": "{\n    //\"login\": \"7771234567\",\n    //\"password\": \"h@rdP@$$\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -244,7 +281,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "2|HCFc8toH11Z3tr8IGbJypyf6w0k7ZVbd8ciWPaZc",
+							"value": "2|i9lnyDajROgczHcJskZMjE37iNf8aECq28V6INXQ",
 							"type": "string"
 						}
 					]
@@ -259,7 +296,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"fromRegionID\": 1,\n    \"toRegionID\": 1,\n    \"deliveryDate\": \"2023-04-17\"\n}",
+					"raw": "{\n    //\"fromRegionID\": 1,\n    //\"toRegionID\": 1,\n    \"deliveryDate\": \"2023-04-17\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -278,6 +315,14 @@
 						"order"
 					]
 				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetRegions",
+			"request": {
+				"method": "GET",
+				"header": []
 			},
 			"response": []
 		}
