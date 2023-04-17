@@ -17,7 +17,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "10|NVrw66JcPYuRhIXq7Lgsx18vmTXZXebGmSVVyNQ1",
+									"value": "3|N6A6JBqyYopLjqATfCbWYkhvOd5KdVRhxzKq7QqQ",
 									"type": "string"
 								}
 							]
@@ -98,7 +98,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "17|uhzI3hOxM4gdyIua9R2b5YQslFRpMrXfY2bI0ZJD",
+									"value": "4|3LdjwLt00TWUaLgTOGbmzn8PJO4nSwgxji0w6Lg5",
 									"type": "string"
 								}
 							]
@@ -251,7 +251,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    //\"login\": \"7771234567\",\n    //\"password\": \"h@rdP@$$\"\n}",
+					"raw": "{\n    \"login\": \"7772129862\",\n    \"password\": \"Abeke123@\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -281,7 +281,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "2|i9lnyDajROgczHcJskZMjE37iNf8aECq28V6INXQ",
+							"value": "3|N6A6JBqyYopLjqATfCbWYkhvOd5KdVRhxzKq7QqQ",
 							"type": "string"
 						}
 					]
@@ -296,7 +296,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    //\"fromRegionID\": 1,\n    //\"toRegionID\": 1,\n    \"deliveryDate\": \"2023-04-17\"\n}",
+					"raw": "{\n    \"fromRegionID\": 1,\n    \"toRegionID\": 1,\n    \"deliveryDate\": \"2023-04-17\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -322,7 +322,19 @@
 			"name": "GetRegions",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/v1/regions",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"regions"
+					]
+				}
 			},
 			"response": []
 		}
