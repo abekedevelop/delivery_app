@@ -26,7 +26,6 @@ class OrderRepository implements OrderRepositoryContract
     public function getByID(int $id): Order
     {
         $o = Order::with('fromCity', 'toCity')->first($id);
-        var_dump($o->fromCity);
         return new Order();
     }
 }
