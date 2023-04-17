@@ -8,11 +8,13 @@ use App\Domain\Contracts\Repository\Admin\OrderRepositoryAdminContract;
 use App\Domain\Contracts\Repository\Admin\RegionRepositoryAdminContract;
 use App\Domain\Contracts\Repository\Admin\UserRepositoryAdminContract;
 use App\Domain\Contracts\Repository\OrderRepositoryContract;
+use App\Domain\Contracts\Repository\RegionRepositoryContract;
 use App\Domain\Contracts\Repository\UserRepositoryContract;
 use App\Interfaces\Repository\Admin\OrderRepositoryAdmin;
 use App\Interfaces\Repository\Admin\RegionRepositoryAdmin;
 use App\Interfaces\Repository\Admin\UserRepositoryAdmin;
 use App\Interfaces\Repository\OrderRepository;
+use App\Interfaces\Repository\RegionRepository;
 use App\Interfaces\Repository\UserRepository;
 use Illuminate\Support\ServiceProvider;
 
@@ -22,6 +24,7 @@ class RepositoryProvider extends ServiceProvider
     {
         $this->bindUserRepository();
         $this->bindOrderRepository();
+        $this->bindRegionRepository();
         /** admin repo's */
         $this->bindAdminUserRepository();
         $this->bindAdminOrderRepository();
@@ -34,6 +37,10 @@ class RepositoryProvider extends ServiceProvider
 
     final public function bindOrderRepository(): void {
         $this->app->bind(OrderRepositoryContract::class, OrderRepository::class);
+    }
+
+    final public function bindRegionRepository(): void {
+        $this->app->bind(RegionRepositoryContract::class, RegionRepository::class);
     }
 
     final public function bindAdminUserRepository(): void {
